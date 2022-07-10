@@ -7,9 +7,9 @@
     protected $table = 'tbluserjob';
  // column sa table
     protected $fillable = [
-    'jobID', 'jobName'
+    'id', 'jobname'
      ];
 
     public $timestamps = false;
-    protected $primaryKey = 'jobID';
+    protected $primaryKey = 'id';
  }

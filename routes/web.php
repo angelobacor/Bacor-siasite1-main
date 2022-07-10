@@ -16,16 +16,14 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+$router->get('/users',['uses' => 'UserController@getUsers']);
+$router->get('/users', 'UserController@index'); // get all users records
+$router->post('/users', 'UserController@add'); // create new user record
+$router->get('/users/{id}', 'UserController@show'); // get user by id
+$router->put('/users/{id}', 'UserController@update'); // update user record
+$router->patch('/users/{id}', 'UserController@update'); // update user record
+$router->delete('/users/{id}', 'UserController@delete'); // delete record
 
-#users routes
-$router->get('/users','UserController@index'); 
-$router->post('/users','UserController@add'); 
-$router->get('/users/{userId}','UserController@show'); 
-$router->put('/users/{userId}','UserController@update'); 
-$router->delete('/users/{userId}','UserController@delete');
 
-
-
-#user job routes
-$router->get('/usersjob','UserJobController@index');
-$router->get('/usersjob/{jobID}','UserJobController@show');
+$router->get('/usersjob','UserJobController@index'); 
+$router->get('/userjob/{id}','UserJobController@show'); // get user by id
